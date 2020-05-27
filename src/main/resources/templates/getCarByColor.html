@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Car by Color</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/getCarColor}"  th:object="${carToGet}" method="post">
+
+    <p>Color: <input type="text" th:field = "*{color}"><input type="submit" value="get Car"></p>
+    <p><a th:href="@{/cars}"> Go to Car List </a></p>
+</form>
+</body>
+</html>

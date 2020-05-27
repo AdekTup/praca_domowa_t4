@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/getCarById/{id}(id=${0})}"> Get Car[id]: </a> <br>
+<a th:href="@{/getCarColor/{color}(color=${0})}"> Get Car[color]: </a><br>
+<a th:href="@{/addCar}"> Add Car </a><br>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Mark</th>
+        <th>Model</th>
+        <th>Color</th>
+    </tr>
+    <tr th:each="car: ${carList}">
+        <td th:text="${car.getId()}"></td>
+        <td th:text="${car.getMark()}"></td>
+        <td th:text="${car.getModel()}"></td>
+        <td th:text="${car.getColor()}"></td>
+        <td><a th:href="@{/updateCar/{id}(id=${car.id})}">EDIT</a></td>
+        <td><a th:href="@{/deleteCar/{id}(id=${car.id})}">Delete</a></td>
+    </tr>
+
+</table>
+</body>
+</html>
